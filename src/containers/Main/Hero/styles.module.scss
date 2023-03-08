@@ -1,0 +1,49 @@
+@import "../../../assets/scss/helpers/typography";
+
+.background {
+  background-image: url(/images/background/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1080px;
+  margin-top: 100px;
+  @include media-breakpoint-down($breakpointSM){
+    height: 700px;
+    margin-top: 55px;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .catalogBtn{
+      display: none;
+      @include media-breakpoint-down($breakpointSM){
+        display: flex;
+        margin-bottom: 48px;
+        font-weight: 600;
+      }
+    }
+    .title {
+      @include h1();
+      line-height: 100.6%;
+      color: $white;
+      margin-bottom: 40px;
+      max-width: 623px;
+      @include media-breakpoint-down($breakpointSM){
+        margin-bottom: 20px;
+      }
+    }
+
+    .description {
+      @include h4();
+      color: $white;
+      margin-bottom: 60px;
+      max-width: 430px;
+      @include media-breakpoint-down($breakpointSM){
+        margin-bottom: 30px;
+      }
+    }
+    .contactUS{
+      font-weight: 600;
+    }
+  }
+}

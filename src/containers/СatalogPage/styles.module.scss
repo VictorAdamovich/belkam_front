@@ -1,0 +1,123 @@
+@import "../../assets/scss/helpers/typography";
+
+.wrap {
+  .activeCategory {
+    @include h2();
+    margin-top: 65px;
+  }
+  
+  .catalogWrap {
+    display: grid;
+    grid-template-columns: 307px auto;
+    grid-column-gap: 20px;
+    margin-top: 100px;
+    @include media-breakpoint-down($breakpointLg) {
+      grid-template-columns: 1fr;
+    }
+    
+    .accordionWrap {
+      @include media-breakpoint-down($breakpointLg) {
+        display: none;
+      }
+    }
+    
+    
+    .catalog {
+      .filters {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-self: center;
+      }
+      
+      .items {
+        margin-bottom: 60px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 30px;
+        @include media-breakpoint-down($breakpointXl) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include media-breakpoint-down($breakpointSM) {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+  
+  .paginationWrap {
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    
+    div {
+      border: none;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      
+      .buttonPrev,
+      .buttonNext {
+        width: 50px;
+        height: 50px;
+        background-color: $lightGreen;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        @include media-breakpoint-down($breakpointSM){
+          width: 40px;
+          height: 40px;
+        }
+        
+        &:hover {
+          background-color: $darkGreen;
+        }
+      }
+      
+      .buttonPrev {
+        margin-right: 30px;
+        @include media-breakpoint-down($breakpointSM){
+          margin-right: 10px;
+        }
+      }
+      
+      .buttonNext {
+        margin-left: 30px;
+        @include media-breakpoint-down($breakpointSM){
+          margin-left: 10px;
+        }
+      }
+      
+      a {
+        width: 40px!important;
+        height: 40px!important;
+        margin: 0 5px!important;
+        padding: 0!important;
+        min-width: auto!important;
+        box-sizing: border-box;
+        @include media-breakpoint-down($breakpointSM){
+          width: 30px!important;
+          height: 30px!important;
+        }
+        
+        &:global(.item) {
+          @include p();
+          margin: 0 5px;
+          display: flex;
+          justify-content: center;
+          border-radius: 50% !important;
+        }
+        
+        &:global(.active) {
+          background-color: $black !important;
+          border-radius: 50px;
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,20 @@
+@import "../../../assets/scss/helpers/typography";
+@import "../../../assets/scss/helpers/variables";
+
+.wrap {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1528px;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @include media-breakpoint-down($breakpointLg) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include media-breakpoint-down($breakpointSM) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

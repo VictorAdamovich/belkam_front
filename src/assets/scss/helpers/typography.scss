@@ -1,0 +1,159 @@
+@import "./variables";
+
+@mixin h1 {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 62px;
+  line-height: 85px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM){
+    font-size: 40px;
+    line-height: 100.6%;
+  }
+}
+
+@mixin h2 {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 66px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM) {
+    font-size: 25px;
+    line-height: 112.6%;
+  }
+}
+
+@mixin h3 {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM) {
+    font-size: 22px;
+    line-height: 112.6%;
+  }
+}
+
+@mixin h4($width:600) {
+  font-family: "Manrope";
+  font-weight: $width;
+  font-size: 24px;
+  line-height: 33px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@mixin h5 {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+@mixin button {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+
+@mixin p {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM){
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+@mixin flutter {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+  @include media-breakpoint-down($breakpointSM){
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+@mixin header {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+
+@mixin smallText {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 0;
+}
+
+//other styles
+@mixin buttonL {
+  color: var(--dark);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 133%;
+}
+
+@mixin buttonM {
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 129%;
+}
+
+@mixin buttonS {
+  color: var(--dark);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 14px;
+}
+
+@mixin link($color:$black) {
+  color: $color;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 300;
+  transition: 0.2s ease;
+  
+  &:hover {
+    color: $color;
+    text-decoration: underline;
+  }
+  
+  &:active {
+    color: $darkGreen;
+  }
+}
+
+@mixin layoutPadding() {
+  padding: 0 50px;
+  @include media-breakpoint-down($breakpointLg) {
+    padding: 0 20px;
+  }
+  @include media-breakpoint-down($breakpointSM) {
+    padding: 0 10px;
+  }
+}

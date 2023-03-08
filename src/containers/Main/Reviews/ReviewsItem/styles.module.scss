@@ -1,0 +1,35 @@
+@import "../../../../assets/scss/helpers/typography";
+
+.wrap {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 442px;
+  padding: 30px;
+  color: $white;
+  border-radius: 15px;
+  background-image: url("/images/background/marble2.png");
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .description {
+    @include p();
+    margin-bottom: 60px;
+  }
+  
+  .name {
+    @include h3();
+    margin-bottom: 2px;
+  }
+  
+  .type {
+    @include p();
+  }
+}

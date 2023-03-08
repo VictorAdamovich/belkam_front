@@ -1,0 +1,62 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrapper {
+  margin-top: 200px;
+  @include media-breakpoint-down($breakpointSM){
+    margin-top: 100px;
+  }
+
+  .textWrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 40px;
+    
+    @include media-breakpoint-down($breakpointLg){
+      grid-template-columns: 1fr;
+      grid-gap: 50px;
+      margin-bottom: 60px;
+    }
+    @include media-breakpoint-down($breakpointSM){
+      margin-bottom: 30px;
+    }
+
+    .title {
+      @include h2();
+      color: $black;
+    }
+
+    .descriptions {
+      @include p();
+    }
+  }
+
+  .sliderWrap {
+    position: relative;
+    width: 100%;
+
+    .btnLeft,
+    .btnRight {
+      position: absolute;
+      transform: translate(50%, 50%);
+      top: 50%;
+      @include media-breakpoint-down($breakpointSM){
+        top: 180px;
+      }
+    }
+
+    .btnLeft {
+      right: 100%;
+      @include media-breakpoint-down($breakpointSM){
+        right: calc(100% - 15px);
+      }
+    }
+
+    .btnRight {
+      right: 0;
+      @include media-breakpoint-down($breakpointSM){
+        right:  15px;
+      }
+    }
+  }
+}

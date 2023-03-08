@@ -1,0 +1,33 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrapper {
+  margin-top: 200px;
+  @include media-breakpoint-down($breakpointSM) {
+    margin-top: 100px;
+  }
+  
+  .title {
+    @include h2();
+    color: $black;
+    margin-bottom: 72px;
+    @include media-breakpoint-down($breakpointSM) {
+      margin-bottom: 30px;
+    }
+  }
+  
+  .benefitsWrap {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    @include media-breakpoint-down($breakpointXlDesktop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-breakpoint-down($breakpointLg) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include media-breakpoint-down($breakpointSM){
+      grid-gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrapper {
+  margin-top: 200px;
+  @include media-breakpoint-down($breakpointSM) {
+    margin-top: 100px;
+  }
+  
+  .title {
+    @include h2();
+    color: $black;
+    margin-bottom: 72px;
+    text-align: center;
+  }
+  
+  .benefitsWrap {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

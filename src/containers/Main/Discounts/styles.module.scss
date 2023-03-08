@@ -1,0 +1,26 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrapper {
+  margin-top: 200px;
+  @include media-breakpoint-down($breakpointSM){
+    margin-top: 100px;
+  }
+
+  .title {
+    @include h2();
+    color: $black;
+    margin-bottom: 72px;
+    @include media-breakpoint-down($breakpointSM){
+      margin-bottom: 30px
+    }
+  }
+  .itemWrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    @include media-breakpoint-down($breakpointXlDesktop){
+      grid-template-columns: 1fr;
+      
+    }
+  }
+}

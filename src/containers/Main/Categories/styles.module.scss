@@ -1,0 +1,78 @@
+@import "../../../assets/scss/helpers/typography";
+.wrapper {
+  margin-top: 200px;
+  @include media-breakpoint-down($breakpointSM){
+    margin-top: 100px;
+  }
+  .wrap {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "v v h h c c"
+      "f f f l l l";
+    @include media-breakpoint-down($breakpointXlDesktop){
+      grid-template-areas:
+      "v v v h h h"
+      "c c c f f f"
+      "l l l l l l";
+    }
+    @include media-breakpoint-down($breakpointSM){
+      grid-template-areas:
+      "v"
+      "h"
+      "c"
+      "f"
+      "l";
+    }
+    
+    .item {
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid $gray;
+      color: $black;
+      cursor: pointer;
+      transition: 0.2s ease;
+      height: 363px;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+
+      &:hover {
+        background-color: $lightGreen;
+        color: $white;
+      }
+      .description {
+        @include h4();
+        margin: 0;
+      }
+      .title {
+        @include h3();
+        margin: 0;
+      }
+    }
+  }
+}
+
+.vertical {
+  grid-area: v;
+  background-image: url(/images/monuments/monuments5.png);
+}
+
+.horizontal {
+  grid-area: h;
+  background-image: url(/images/monuments/monuments4.png);
+}
+
+.complex {
+  grid-area: c;
+  background-image: url(/images/monuments/monuments3.png);
+}
+
+.fences {
+  grid-area: f;
+  background-image: url(/images/monuments/monuments2.png);
+}
+
+.landscaping {
+  grid-area: l;
+  background-image: url(/images/monuments/monuments1.png);
+}

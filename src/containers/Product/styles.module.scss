@@ -1,0 +1,85 @@
+@import "../../assets/scss/helpers/typography";
+
+.wrap {
+  margin-top: 65px;
+  
+  .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    @include media-breakpoint-down($breakpointXl){
+      grid-template-columns: 1fr;
+    }
+    
+    .itemImage{
+      display: grid;
+      justify-self: center;
+      img{
+        width: 100%;
+      }
+    
+    }
+    
+    .itemDesc {
+      .type {
+        @include h4();
+        font-weight: 400;
+      }
+      
+      .itemTitle {
+        @include h2();
+      }
+      
+      .priceWrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 42px;
+        @include media-breakpoint-down($breakpointSM){
+          flex-direction: column;
+          margin-top: 20px;
+        }
+        
+        .itemPrice {
+          @include h2();
+        }
+        
+        .btn {
+          @include p();
+          @include media-breakpoint-down($breakpointSM){
+            margin-top: 20px;
+            max-width: 268px;
+          }
+        }
+      }
+      
+      .characteristics {
+        margin-top: 72px;
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        @include media-breakpoint-down($breakpointSM){
+          margin-top: 40px;
+        }
+      }
+      
+      .specDesc {
+        @include p();
+        max-width: 612px;
+        margin-top: 30px;
+        @include media-breakpoint-down($breakpointXl){
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  
+  .similarProducts {
+    margin: 200px 0;
+    @include media-breakpoint-down($breakpointSM){
+      margin-top: 100px;
+    }
+    .similarProductsTitle{
+      @include h2();
+    }
+ 
+  }
+}

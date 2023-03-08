@@ -1,0 +1,48 @@
+$dark: #001847;
+$blueDark: #1756D0;
+$blue: #4E87F7;
+$slatyBlue: #4B6CAD;
+$gray: #6B778C;
+$lightGray: #F9FAFC;
+$white: #FFF;
+$blueLight: #A0C0FF;
+$green: #2DB976;
+$gradientPrimary: linear-gradient(254.98deg, #3D76E8 2.53%, #1C4EB0 100%);
+$gradientSecondary: linear-gradient(180deg, rgba(78, 135, 247, 0.1) 0%, rgba(78, 135, 247, 0.02) 100%);
+
+$black: #2C2C2C;
+$gray:#BDBDBD;
+$liteGray: #F4F5F8;
+$white: #FFFFFF;
+$lightGreen:#7E9A84;
+$darkGreen:#5E7964;
+$red:#D84040;
+
+
+
+$breakpointMax: 1920px;
+$breakpointXxl: 1600px;
+$breakpointXlDesktop: 1440px;
+$breakpointXl: 1280px;
+$breakpointLg: 1024px;
+$breakpointMd: 768px;
+$breakpointSM: 640px;
+$breakpointXs: 580px;
+
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-height-down($breakpoint) {
+  @media (max-height: $breakpoint) {
+    @content;
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../../../assets/scss/helpers/typography";
+@import "../../../../assets/scss/helpers/variables";
+
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid $gray;
+  border-radius: 15px;
+  background-image: url("../../../../../public/images/background/marble1.png");
+  background-size: cover;
+  
+  .title {
+    @include h3();
+    line-height: 36px;
+    padding: 40px 0 28px 0;
+    text-align: center;
+  }
+  
+  .price {
+    @include h2();
+    width: 100%;
+    padding: 17px 0;
+    text-align: center;
+    color: $white;
+    background-color: $lightGreen;
+    
+    .startFrom {
+      @include h4();
+      padding-right: 10px;
+    }
+  }
+  
+  .includesWrap,
+  .includesFreeWrap {
+    width: 100%;
+    margin-top: 52px;
+    padding: 0 45px 0 65px;
+  }
+  
+  .includesFreeWrap {
+    height: 100%;
+  }
+  
+  .free {
+    @include p();
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+  
+  .row {
+    @include h4(400);
+    display: flex;
+    
+    .icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      
+      svg {
+        fill: $black;
+      }
+    }
+  }
+  
+  .btn {
+    margin: 31px 0 20px;
+  }
+}
+
+.dark {
+  color: $white;
+  background-image: url("/images/background/marble2.png");
+  
+  .row {
+    .icon {
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrap {
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 50px;
+  @include media-breakpoint-down($breakpointXlDesktop){
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  
+  @include media-breakpoint-down($breakpointSM){
+    margin-top: 100px;
+  }
+  
+  .title {
+    @include h2();
+    margin-bottom: 72px;
+  }
+  
+  .infoWrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 60px;
+    grid-column-gap: 105px;
+    @include media-breakpoint-down($breakpointSM){
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
+    }
+    
+    .infoTitle {
+      @include smallText;
+      margin-bottom: 10px;
+      @include media-breakpoint-down($breakpointSM){
+        margin-bottom: 5px;
+      }
+    }
+    
+    .infoDesc {
+      @include h4();
+      font-weight: 400;
+    }
+  }
+  .formWrap{
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,34 @@
+@import "../../../assets/scss/helpers/typography";
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin-top: 60px;
+  @include media-breakpoint-down($breakpointXlDesktop){
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+  .advantagesItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $white;
+    background-image: url('/images/background/marble2.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 15px;
+    padding: 20px 0;
+    
+    .advantagesValue,
+    .advantagesDesc {
+      @include p();
+      
+      .bigText {
+        @include h3();
+      }
+    }
+  }
+}

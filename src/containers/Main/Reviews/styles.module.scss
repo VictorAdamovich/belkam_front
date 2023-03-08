@@ -1,0 +1,28 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrapper {
+  padding-top: 157px;
+
+  .textWrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+
+    .title {
+      @include h2();
+      color: $black;
+    }
+
+    .slideArrow {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.sliderWrap {
+  margin-top: 68px;
+  width: 100%;
+}

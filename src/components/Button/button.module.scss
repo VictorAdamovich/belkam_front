@@ -1,0 +1,120 @@
+/* stylelint-disable max-nesting-depth */
+@import "../../assets/scss/helpers/variables";
+@import "../../assets/scss/helpers/typography";
+
+.button {
+  @include flutter();
+  border-radius: 30px;
+  transition: .2s ease;
+  color: $white;
+  text-align: center;
+}
+
+
+.control {
+  align-items: center;
+  display: flex;
+  height: 15px;
+  justify-content: center;
+  margin-left: 10px;
+  position: relative;
+  width: 15px;
+  
+  
+  &::before,
+  &::after {
+    background-color: $darkGreen;
+    border-radius: 1px;
+    content: '';
+    height: 13px;
+    position: absolute;
+    width: 2px;
+  }
+  
+  &::before {
+    transform: rotate(45deg);
+  }
+  
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.withControl {
+  display: flex;
+  align-items: center;
+}
+
+.sizeL {
+  padding: 17px 50px;
+}
+
+.sizeM {
+  padding: 17px 30px;
+}
+
+.sizeS {
+  @include smallText();
+  padding: 15px 20px;
+}
+
+.black {
+  background-color: $black;
+  
+  &:hover {
+    background-color: $lightGreen;
+  }
+  
+  &:active {
+    background-color: $darkGreen;
+  }
+}
+
+.green {
+  background-color: $lightGreen;
+  
+  &:hover {
+    background-color: $darkGreen;
+  }
+  
+  &:active {
+    background-color: $lightGreen;
+  }
+}
+
+.white {
+  background-color: $white;
+  color: $black;
+  
+  &:hover {
+    background-color: $lightGreen;
+    color: $white;
+  }
+  
+  &:active {
+    background-color: $darkGreen;
+    color: $white;
+  }
+}
+
+.greenWhite {
+  color: $lightGreen;
+  border: 1px solid $lightGreen;
+  
+  &:hover {
+    background-color: $lightGreen;
+    color: $white;
+    
+    .control {
+      &::before,
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+  
+  &:active {
+    background-color: $darkGreen;
+    color: $white;
+  }
+}

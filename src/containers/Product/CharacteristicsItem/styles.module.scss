@@ -1,0 +1,21 @@
+@import "../../../assets/scss/helpers/typography";
+
+.characteristicsItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  width: 100%;
+  
+  &:not(:last-child) {
+    border-bottom: 1px solid $gray;
+  }
+  
+  .itemName {
+    @include h5();
+  }
+  
+  .itemValue {
+    @include smallText();
+    text-align: right;
+  }
+}

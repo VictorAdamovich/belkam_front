@@ -1,0 +1,31 @@
+@import '../../assets/scss/helpers/typography';
+
+.wrapper {
+  @include p();
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.item,
+.item .itemLink {
+  font-weight: 300;
+  align-items: center;
+  color: $black;
+  display: inline-flex;
+  word-break: break-word;
+  &:last-child {
+    font-weight: 500;
+  }
+}
+.itemLink{
+  @include link();
+  font-weight: 300!important;
+}
+
+.dash {
+  &:first-child {
+    display: none;
+  }
+}

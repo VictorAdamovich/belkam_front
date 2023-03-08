@@ -1,0 +1,56 @@
+@import "../../../../assets/scss/helpers/typography";
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 100px 55px;
+  border-bottom: 1px solid $gray;
+  @include media-breakpoint-down($breakpointXl) {
+    grid-template-areas:
+      'a b'
+      'c c';
+  }
+  @include media-breakpoint-down($breakpointSM) {
+    padding: 60px 10px;
+  }
+  
+  .footerLogo {
+    width: 220px;
+    height: 47px;
+    @include media-breakpoint-down($breakpointXl) {
+      grid-area: a;
+    }
+  }
+  
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 65px;
+    margin-right: 45px;
+    @include media-breakpoint-down($breakpointXl) {
+      grid-area: c;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      max-width: 500px;
+      row-gap: 15px;
+    }
+    
+    a {
+      @include p();
+      @include link($white);
+      font-weight: 400;
+    }
+  }
+}
+
+
+.goTopBtn {
+  transform: rotate(270deg);
+  @include media-breakpoint-down($breakpointXl) {
+    grid-area: b;
+    justify-self: end;
+    align-self: center;
+  }
+}

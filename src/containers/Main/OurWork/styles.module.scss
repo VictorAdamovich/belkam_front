@@ -1,0 +1,42 @@
+@import "../../../assets/scss/helpers/typography";
+
+.wrapper {
+  padding-top: 157px;
+  
+  .textWrap {
+    display: grid;
+    grid-template-columns:  1fr auto;
+    grid-column-gap: 20px;
+    align-self: center;
+    margin-bottom: 72px;
+    vertical-align: center;
+    @include media-breakpoint-down($breakpointSM) {
+      margin-bottom: 30px;
+    }
+    
+    .title {
+      @include h2();
+      color: $black;
+    }
+    
+    .slideArrow {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+}
+
+.sliderWrap {
+  overflow: hidden;
+  width: auto;
+  .itemWrap{
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px!important;
+    overflow: hidden;
+    
+  }
+}
+
