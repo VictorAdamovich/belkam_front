@@ -1,4 +1,4 @@
-const SITE_URL = 'http://localhost:1337';
+const SITE_URL = 'http://178.172.138.237:1337/admin';
 
 export const BASE_URL = `${SITE_URL}/api/`;
 export const BASE_IMG_URL = SITE_URL;
