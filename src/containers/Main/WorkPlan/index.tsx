@@ -2,6 +2,8 @@ import React, { FC, memo } from 'react';
 
 import cn from 'classnames';
 import { useKeenSlider } from 'keen-slider/react';
+import { IWorkPlanAttributes } from 'src/types/main-page.types';
+import { DataType, StrapiReqType } from 'src/types/strapi.types';
 
 import SlideButton from '@components/SlideButton';
 import { IconSliderLeft, IconSliderRight } from '@constants/icons.constants';
@@ -15,7 +17,7 @@ import WorkPlanItem from './WorkPlanItem';
 import styles from './styles.module.scss';
 
 type Props = {
-  workPlan: any
+  workPlan: StrapiReqType<DataType<IWorkPlanAttributes>[]>
 }
 
 const WorkPlan: FC<Props> = ({ workPlan }) => {

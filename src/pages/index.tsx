@@ -1,6 +1,10 @@
 import React from 'react';
 
 import { GetServerSideProps, NextPage } from 'next';
+import {
+  IOurWorkAttributes, IReviewsAttributes, IStocksAttributes, IWorkPlanAttributes,
+} from 'src/types/main-page.types';
+import { DataType, StrapiReqType } from 'src/types/strapi.types';
 
 import Benefits from '@containers/Main/Benefits';
 import Categories from '@containers/Main/Categories';
@@ -15,11 +19,10 @@ import WorkPlan from '@containers/Main/WorkPlan';
 import { mainPageApi } from '@services/api/mainPage.api';
 
 type Props = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  stocks: any
-  reviews: any
-  ourWorks: any
-  workPlan: any
+  stocks: StrapiReqType<DataType<IStocksAttributes>[]>
+  reviews: StrapiReqType<DataType<IReviewsAttributes>[]>
+  ourWorks: StrapiReqType<DataType<IOurWorkAttributes>[]>
+  workPlan: StrapiReqType<DataType<IWorkPlanAttributes>[]>
 }
 
 const Main: NextPage<Props> = ({
@@ -28,6 +31,7 @@ const Main: NextPage<Props> = ({
   ourWorks,
   workPlan,
 }) => {
+
   return (
     <div>
       <Hero />

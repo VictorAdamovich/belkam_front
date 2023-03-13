@@ -2,6 +2,8 @@ import React, { FC, memo } from 'react';
 
 import cn from 'classnames';
 import { useKeenSlider } from 'keen-slider/react';
+import { IReviewsAttributes } from 'src/types/main-page.types';
+import { DataType, StrapiReqType } from 'src/types/strapi.types';
 
 import SlideButton from '@components/SlideButton';
 import { IconSliderLeft, IconSliderRight } from '@constants/icons.constants';
@@ -16,7 +18,7 @@ import 'slick-carousel/slick/slick.css';
 import styles from './styles.module.scss';
 
 type Props = {
-  reviews: any
+  reviews: StrapiReqType<DataType<IReviewsAttributes>[]>
 }
 
 const Reviews: FC<Props> = ({ reviews }) => {

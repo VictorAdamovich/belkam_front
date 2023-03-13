@@ -2,6 +2,8 @@ import React, { FC, memo } from 'react';
 
 import cn from 'classnames';
 import { useKeenSlider } from 'keen-slider/react';
+import { IOurWorkAttributes } from 'src/types/main-page.types';
+import { DataType, StrapiReqType } from 'src/types/strapi.types';
 
 import SlideButton from '@components/SlideButton';
 import { BASE_IMG_URL } from '@constants/api.constants';
@@ -15,12 +17,13 @@ import 'keen-slider/keen-slider.min.css';
 import styles from './styles.module.scss';
 
 type Props = {
-  ourWorks: any
+  ourWorks: StrapiReqType<DataType<IOurWorkAttributes>[]>
 }
 
-const OurWork: FC<Props> = (ourWorks) => {
+const OurWork: FC<Props> = ({ ourWorks }) => {
 
-  const imageArr = ourWorks.ourWorks.data[0].attributes.imges.data;
+  const imageArr = ourWorks.data[0].attributes.imges.data;
+  console.log(imageArr);
 
   const { width } = useWindowSize();
 

@@ -1,4 +1,8 @@
 import axios from 'axios';
+import {
+  IOurWorkAttributes, IReviewsAttributes, IStocksAttributes, IWorkPlanAttributes,
+} from 'src/types/main-page.types';
+import { DataType, StrapiReqType } from 'src/types/strapi.types';
 
 import {
   API_OUR_WORKS, API_REVIEWS, API_STOCK, API_WORK_PLANS, BASE_URL,
@@ -19,8 +23,8 @@ const instance = axios.create({
 });
 
 export const mainPageApi = {
-  getStocks: () => instance.get(API_STOCK),
-  getReviews: () => instance.get(API_REVIEWS),
-  getOurWorks: () => instance.get(API_OUR_WORKS),
-  getWorkPlans: () => instance.get(API_WORK_PLANS),
+  getStocks: () => instance.get<StrapiReqType<DataType<IStocksAttributes>[]>>(API_STOCK),
+  getReviews: () => instance.get<StrapiReqType<DataType<IReviewsAttributes>[]>>(API_REVIEWS),
+  getOurWorks: () => instance.get<StrapiReqType<DataType<IOurWorkAttributes>[]>>(API_OUR_WORKS),
+  getWorkPlans: () => instance.get<StrapiReqType<DataType<IWorkPlanAttributes>[]>>(API_WORK_PLANS),
 };
