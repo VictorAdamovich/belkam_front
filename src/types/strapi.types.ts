@@ -26,6 +26,10 @@ export type DefaultAttributesType={
 }
 
 export type ImageURLDataType={
+  data: ImageURLType
+}
+
+export type ImageArrURLDataType={
   data: ImageURLType[]
 }
 

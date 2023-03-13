@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './styles.module.scss';
+import styles from 'src/pages/catalog/styles.module.scss';
 
 const howDoIKnowThisIsSafe = (
   <div className={styles.textWrapper}>

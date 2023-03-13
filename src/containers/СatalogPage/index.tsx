@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Pagination } from 'semantic-ui-react';
-import { categoriesData } from 'src/pages/catalog/categories.constant';
 
 import { Accordion } from '@components/Accordion';
 import Button from '@components/Button';
@@ -11,6 +10,7 @@ import {
 } from '@constants/icons.constants';
 import { SELECT_OPTIONS } from '@constants/sort.constants';
 import CatalogItem from '@containers/СatalogPage/CatalogItem';
+import { categoriesData } from '@containers/СatalogPage/categories.constant';
 import { MOKCatalog } from '@containers/СatalogPage/MOKCatalog';
 import useBreakpoint from '@hooks/use-breakpoint.hooks';
 
@@ -18,9 +18,9 @@ import styles from './styles.module.scss';
 
 const CatalogPage = () => {
   const { isBreakpointSm: isMobile } = useBreakpoint();
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const showMobileFilter = () => setIsOpen((prev) => !prev);
+  // const showMobileFilter = () => setIsOpen((prev) => !prev);
 
   return (
     <div className={styles.wrap}>

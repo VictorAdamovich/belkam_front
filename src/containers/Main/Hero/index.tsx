@@ -1,16 +1,12 @@
 import React, { memo } from 'react';
 
 import Button from '@components/Button';
-import { MODAL_TYPES } from '@constants/modals.constants';
 import { SECTIONS } from '@constants/sections.constants';
 import Section from '@containers/Layout/Section';
-import { useModals } from '@hooks/modals.hooks';
 
 import styles from './styles.module.scss';
 
 const Hero = () => {
-
-  const { showModal } = useModals();
 
   return (
     <div className={styles.background}>
@@ -29,7 +25,7 @@ const Hero = () => {
             size="sizeL"
             defaultStyle="green"
             className={styles.contactUS}
-            onClick={() => showModal(MODAL_TYPES.CONSULTATION)}
+            onClick={() => null}
           >
             Заказать консультацию
           </Button>

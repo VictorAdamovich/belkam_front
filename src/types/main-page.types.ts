@@ -1,4 +1,4 @@
-import { DefaultAttributesType, ImageURLDataType } from 'src/types/strapi.types';
+import { DefaultAttributesType, ImageArrURLDataType, ImageURLDataType } from 'src/types/strapi.types';
 
 export interface IStocksAttributes extends DefaultAttributesType {
   title: string;
@@ -9,7 +9,7 @@ export interface IStocksAttributes extends DefaultAttributesType {
 }
 
 export interface IOurWorkAttributes extends DefaultAttributesType {
-  imges: ImageURLDataType;
+  imges: ImageArrURLDataType;
 }
 
 export interface IWorkPlanAttributes extends DefaultAttributesType {

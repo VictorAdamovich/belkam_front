@@ -23,7 +23,6 @@ type Props = {
 const OurWork: FC<Props> = ({ ourWorks }) => {
 
   const imageArr = ourWorks.data[0].attributes.imges.data;
-  console.log(imageArr);
 
   const { width } = useWindowSize();
 
