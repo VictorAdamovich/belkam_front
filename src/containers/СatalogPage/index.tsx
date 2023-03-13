@@ -9,6 +9,7 @@ import {
   IconFilter, IconSliderLeft, IconSliderRight, IconSortArrow,
 } from '@constants/icons.constants';
 import { SELECT_OPTIONS } from '@constants/sort.constants';
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
 import CatalogItem from '@containers/СatalogPage/CatalogItem';
 import { categoriesData } from '@containers/СatalogPage/categories.constant';
 import { MOKCatalog } from '@containers/СatalogPage/MOKCatalog';
@@ -38,8 +39,8 @@ const CatalogPage = () => {
           <div className={styles.filters}>
             <div className={styles.activeFilters}>
               <Button
-                size="sizeS"
-                defaultStyle="greenWhite"
+                size={UI_SIZE.S}
+                defaultStyle={BTN_DEFAULT_STYLE.GW}
                 withControl
               >Вертикальные
               </Button>

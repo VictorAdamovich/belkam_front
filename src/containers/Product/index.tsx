@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import Button from '@components/Button';
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
 import Advantages from '@containers/Product/Advantages';
 import CharacteristicsItem from '@containers/Product/CharacteristicsItem';
 import { characteristics } from '@containers/Product/MOKCItem';
@@ -20,8 +21,8 @@ const Product = () => {
           <div className={styles.priceWrap}>
             <h2 className={styles.itemPrice}>997 BYN</h2>
             <Button
-              size="sizeM"
-              defaultStyle="green"
+              size={UI_SIZE.M}
+              defaultStyle={BTN_DEFAULT_STYLE.G}
               className={styles.btn}
             >Заказать изготовление
             </Button>

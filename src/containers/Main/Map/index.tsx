@@ -5,6 +5,7 @@ import React, { memo, useState } from 'react';
 import cn from 'classnames';
 
 import Button from '@components/Button';
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
 
 import styles from './styles.module.scss';
 
@@ -13,8 +14,8 @@ const Map = () => {
   return (
     <div className={cn(styles.wrap, { [styles.active]: active })}>
       <Button
-        size="sizeS"
-        defaultStyle="black"
+        size={UI_SIZE.S}
+        defaultStyle={BTN_DEFAULT_STYLE.B}
         className={styles.mapBtn}
         onClick={() => setActive(true)}
       >Смотреть на карте

@@ -1,13 +1,14 @@
 import React, { memo, useEffect, useState } from 'react';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import cn from 'classnames';
 
 import Button from '@components/Button';
 import { iconHeaderLogo } from '@constants/icons.constants';
 import { MAIN_LINKS, MAIN_LINKS_MOBILE } from '@constants/main.constants';
+import { CATALOG_PATH } from '@constants/routes.constants';
 import { SECTIONS } from '@constants/sections.constants';
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
 
 import styles from './styles.module.scss';
 
@@ -15,14 +16,12 @@ const Header = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const router = useRouter();
-
-  const onLogoClickHandle = () => router.push('/');
-  const onCatalogBtnClick = () => router.push('/catalog/');
-
   useEffect(() => {
-    if (isOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'visible';
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
   }, [isOpen]);
 
   return (
@@ -30,9 +29,11 @@ const Header = () => {
       <div className={styles.wrapper}>
         <div className={styles.linksWrap}>
 
-          <div className={styles.headerLogo} onClick={() => onLogoClickHandle()}>
-            {iconHeaderLogo}
-          </div>
+          <Link href="/">
+            <a className={styles.headerLogo}>
+              {iconHeaderLogo}
+            </a>
+          </Link>
           <div className={styles.headerLinks}>
             {MAIN_LINKS.map((el) => (
               <Link href={el.href}>
@@ -45,22 +46,23 @@ const Header = () => {
         </div>
 
         <div className={styles.headerBtn}>
-          <Button
-            defaultStyle="black"
-            size="sizeM"
-            className={styles.catalogBtn}
-            onClick={() => onCatalogBtnClick()}
-          >
-            Каталог
-          </Button>
-          <div
+          <Link href={CATALOG_PATH}>
+            <a>
+              <Button
+                defaultStyle={BTN_DEFAULT_STYLE.B}
+                size={UI_SIZE.M}
+                className={styles.catalogBtn}
+              >
+                Каталог
+              </Button>
+            </a>
+          </Link>
+
+          <button
             className={styles.burgerWrap}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <button
-              className={cn(styles.burger, { [styles.open]: isOpen })}
-            />
-          </div>
+            onClick={() => setIsOpen((prev) => !prev)}
+          ><span className={cn(styles.burger, { [styles.open]: isOpen })} />
+          </button>
 
         </div>
         <div className={cn(styles.mobileMenu, { [styles.show]: isOpen })}>
@@ -76,17 +78,19 @@ const Header = () => {
               </div>
             ))}
           </div>
-          <Button
-            defaultStyle="black"
-            size="sizeM"
-            className={styles.catalogBtn}
-            onClick={() => onCatalogBtnClick()}
-          >
-            Каталог
-          </Button>
+          <Link href={CATALOG_PATH}>
+            <a>
+              <Button
+                defaultStyle={BTN_DEFAULT_STYLE.B}
+                size={UI_SIZE.M}
+                className={styles.catalogBtn}
+              >
+                Каталог
+              </Button>
+            </a>
+          </Link>
 
         </div>
-
       </div>
     </header>
   );

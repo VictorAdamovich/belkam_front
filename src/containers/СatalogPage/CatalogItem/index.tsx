@@ -1,6 +1,7 @@
 import React, { FC, memo } from 'react';
 
 import Button from '@components/Button';
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
 
 import styles from './styles.module.scss';
 
@@ -32,8 +33,8 @@ const CatalogItem: FC<Props> = ({
           </h4>
         </div>
         <Button
-          defaultStyle="green"
-          size="sizeL"
+          defaultStyle={BTN_DEFAULT_STYLE.G}
+          size={UI_SIZE.L}
           className={styles.btn}
         >Подробнее
         </Button>

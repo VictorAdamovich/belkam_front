@@ -2,6 +2,8 @@ import React, { memo } from 'react';
 
 import cn from 'classnames';
 
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
+
 import 'focus-visible/dist/focus-visible.js';
 
 import styles from './button.module.scss';
@@ -11,8 +13,8 @@ type Props = {
   disabled?: boolean,
   children?: string,
   onClick?: () => void,
-  defaultStyle?: 'black' | 'green' | 'white' | 'greenWhite'
-  size: 'sizeL' | 'sizeM' | 'sizeS' | 'sizeXS'
+  defaultStyle: BTN_DEFAULT_STYLE
+  size: UI_SIZE
   withControl?: boolean
 }
 
@@ -22,11 +24,10 @@ const Button = ({
 
   return (
     <button
-      className={cn(styles.button, className, {
-        [styles[defaultStyle || '']]: defaultStyle,
-        [styles[size || '']]: size,
-        [styles.withControl]: withControl,
-      })}
+      className={cn(styles.button, className, styles[defaultStyle], styles[size],
+        {
+          [styles.withControl]: withControl,
+        })}
       onClick={onClick}
       disabled={disabled}
     >
@@ -41,7 +42,6 @@ Button.defaultProps = {
   disabled: false,
   children: null,
   onClick: () => { },
-  defaultStyle: '',
   withControl: false,
 };
 

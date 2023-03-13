@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 import Button from '@components/Button';
 import { iconCheckRound } from '@constants/icons.constants';
+import { BTN_DEFAULT_STYLE, UI_SIZE } from '@constants/ui.constants';
 
 import styles from './styles.module.scss';
 
@@ -50,9 +51,9 @@ const WorkPlanItem: FC<Props> = ({
       </div>
 
       <Button
-        size="sizeL"
+        size={UI_SIZE.L}
         className={styles.btn}
-        defaultStyle={even ? 'white' : 'black'}
+        defaultStyle={even ? BTN_DEFAULT_STYLE.W : BTN_DEFAULT_STYLE.B}
       >
         Заказать пакет
       </Button>
