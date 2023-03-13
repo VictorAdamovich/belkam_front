@@ -9,6 +9,8 @@
   border-radius: 15px;
   background-image: url("../../../../../public/images/background/marble1.png");
   background-size: cover;
+  flex-shrink: 0;
+ 
   
   .title {
     @include h3();
@@ -35,7 +37,7 @@
   .includesFreeWrap {
     width: 100%;
     margin-top: 52px;
-    padding: 0 45px 0 65px;
+    padding: 0 20px 0 20px;
   }
   
   .includesFreeWrap {

@@ -11,11 +11,30 @@
     color: $black;
     margin-bottom: 72px;
     text-align: center;
+    @include media-breakpoint-down($breakpointSM){
+      margin-bottom: 0;
+    }
+  }
+  
+  .slideArrow {
+    display: none;
+    @include media-breakpoint-down($breakpointXlDesktop) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 60px;
+    }
+    @include media-breakpoint-down($breakpointSM) {
+      margin-bottom: 30px;
+    }
   }
   
   .benefitsWrap {
     display: grid;
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    @include media-breakpoint-down($breakpointXlDesktop) {
+      grid-gap: 0;
+    }
   }
 }

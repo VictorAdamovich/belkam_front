@@ -22,7 +22,9 @@ export const Accordion = ({
   const openItem = isOpen ? open : close;
   const [activeItem, setActiveItem] = useState<number>(openItem);
 
-  const onToggle = (index: number) => setActiveItem(index);
+  const onToggle = (index: number) => {
+    setActiveItem(index);
+  };
 
   return (
     <>

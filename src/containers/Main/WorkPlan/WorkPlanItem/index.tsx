@@ -13,14 +13,15 @@ type Props = {
   includes: string[]
   includesFree: string[]
   even: boolean
+  className?: string
 }
 
 const WorkPlanItem: FC<Props> = ({
-  title, price, includes, includesFree, even,
+  title, price, includes, includesFree, even, className,
 }) => {
 
   return (
-    <div className={cn(styles.wrap, { [styles.dark]: even })}>
+    <div className={cn(styles.wrap, className, { [styles.dark]: even })}>
       <h3 className={styles.title}>{title}</h3>
       <h2 className={styles.price}>
         <span className={styles.startFrom}>от</span>
@@ -58,6 +59,10 @@ const WorkPlanItem: FC<Props> = ({
 
     </div>
   );
+};
+
+WorkPlanItem.defaultProps = {
+  className: '',
 };
 
 export default memo(WorkPlanItem);

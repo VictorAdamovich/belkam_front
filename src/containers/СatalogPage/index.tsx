@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Pagination } from 'semantic-ui-react';
 import { categoriesData } from 'src/pages/catalog/categories.constant';
@@ -6,7 +6,9 @@ import { categoriesData } from 'src/pages/catalog/categories.constant';
 import { Accordion } from '@components/Accordion';
 import Button from '@components/Button';
 import Select from '@components/Select';
-import { IconSliderLeft, IconSliderRight, IconSortArrow } from '@constants/icons.constants';
+import {
+  IconFilter, IconSliderLeft, IconSliderRight, IconSortArrow,
+} from '@constants/icons.constants';
 import { SELECT_OPTIONS } from '@constants/sort.constants';
 import CatalogItem from '@containers/СatalogPage/CatalogItem';
 import { MOKCatalog } from '@containers/СatalogPage/MOKCatalog';
@@ -16,10 +18,18 @@ import styles from './styles.module.scss';
 
 const CatalogPage = () => {
   const { isBreakpointSm: isMobile } = useBreakpoint();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showMobileFilter = () => setIsOpen((prev) => !prev);
 
   return (
     <div className={styles.wrap}>
-      <h2 className={styles.activeCategory}>Памятники</h2>
+      <div className={styles.header}>
+        <h2 className={styles.activeCategory}>
+          Памятники
+        </h2>
+        <div className={styles.iconWrap}>{IconFilter}</div>
+      </div>
       <div className={styles.catalogWrap}>
         <div className={styles.accordionWrap}>
           <Accordion data={categoriesData} isOpen />
@@ -52,7 +62,6 @@ const CatalogPage = () => {
           <div className={styles.items}>
             {MOKCatalog.map((el) => (
               <CatalogItem
-                id={el.id}
                 image={el.image}
                 description={el.description}
                 name={el.name}
@@ -68,8 +77,6 @@ const CatalogPage = () => {
               siblingRange={1}
               totalPages={10}
               secondary
-              // Heads up! All items are powered by shorthands, if you want to hide one of them, just pass `null` as value
-              // ellipsisItem={null}
               firstItem={null}
               lastItem={null}
               prevItem={<button className={styles.buttonPrev}>{IconSliderLeft}</button>}

@@ -16,6 +16,8 @@ type Props = {
 const Discounts: FC<Props> = ({ stocks }) => {
   const { data } = stocks;
 
+  console.log(data);
+
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   const getDiscountsItemImageUrl = (index: number) => `${BASE_IMG_URL}${data[index]?.attributes?.imgUrl?.data?.attributes?.url}`;
   return (
